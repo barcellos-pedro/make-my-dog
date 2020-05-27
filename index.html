@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,48 +12,62 @@
         <h1>Make my dog</h1>
     </header>
 
-    <div class="conteudo">
+    <div class="main">
 
         <div id="lado-esquerdo">
-            <label for="nome">Insira o nome do seu cão.</label>
-            <input type="text" id="nome" placeholder="Digite aqui">
+            <div>
+                <label for="nome">Insira o nome do seu cão.</label>
+                <input type="text" id="nome" placeholder="Digite aqui">
+            </div>
 
-            <label for="raca">Selecione a raça</label>
-            <select name="raca" id="raca">
-                <!-- <option value="raca1">Raça 1</option>  -->
-            </select>
+            <div>
+                <label for="raca">Selecione a raça</label>
+                <select name="raca" id="raca">
+                    <!-- <option value="raca1">Raça 1</option>  -->
+                </select>
+                <button id="pesquisarSubRaca">pesquisar sub-raça</button>
+            </div>
 
-            <button id="pesquisarSubRaca">pesquisar sub-raça</button>
+            <div>
+                <select name="sub-raca" id="subRaca">
+                    <option value="">Sub-Raça</option>
+                </select>
+            </div>
 
-            <select name="sub-raca" id="subRaca">
-                <!-- <option value="sub-raca1">Sub-Raça 1</option> -->
-            </select>
+            <div>
+                <label for="fonte">Escolha a fonte para o texto</label>
+                <select name="fonte" id="fonte">
+                    <!-- <option value="fonte 1">Fonte 1</option>  -->
+                </select>
+            </div>
 
-            <select name="fonte">
-                <!-- <option value="fonte 1">Fonte 1</option>  -->
-            </select>
+            <div id="cores">
+                <p id="paragrafoCor">Escolha a cor do seu texto</p>
 
-            <label for="">Vermelho</label>
-            <input type="radio" name="cor" value="red" id="red" onclick="pegacor()">
-            <label for="">Verde</label>
-            <input type="radio" name="cor" value="green" id="green" onclick="pegacor()">
-            <label for="">Amarelo</label>
-            <input type="radio" name="cor" value="yellow" id="yellow" onclick="pegacor()">
-            <label for="">Roxo</label>
-            <input type="radio" name="cor" value="rebeccapurple" id="rebeccapurple"onclick="pegacor()">
-            <label for="">Azul</label>
-            <input type="radio" name="cor" value="blue" id="blue" onclick="pegacor()">
+                <div id="botoesCor">
+                    <label for="">Vermelho</label>
+                    <input type="radio" name="cor" value="red" id="red" onclick="pegacor()">
+                    <label for="">Verde</label>
+                    <input type="radio" name="cor" value="green" id="green" onclick="pegacor()">
+                    <label for="">Amarelo</label>
+                    <input type="radio" name="cor" value="yellow" id="yellow" onclick="pegacor()">
+                    <label for="">Roxo</label>
+                    <input type="radio" name="cor" value="rebeccapurple" id="rebeccapurple"onclick="pegacor()">
+                    <label for="">Azul</label>
+                    <input type="radio" name="cor" value="blue" id="blue" onclick="pegacor()">
+                </div>
+            </div>
 
-            <button>vem doguinho</button>
-            <p id="enviado">Mensagem de sucesso!</p>
+            <div>
+                <button id="enviar">Vem doguinho</button>
+                <button>Limpar</button>
+            </div>
 
-            <button>Limpar</button>
+            <p id="mensagem">Mensagem de sucesso!</p>
         </div>
 
         <div id="lado-direito">
-            <div id="imagem">
-
-            </div>
+            <div id="imagem"></div>
             <p id="nomeCachorro">Freud Barcellos</p>
         </div>
         
