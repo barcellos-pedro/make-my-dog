@@ -1,19 +1,33 @@
 body{
     margin: 0;
+    background-color: #fffef5;
+}
+
+p{
+    margin: 0;
 }
 
 header{
     background-color: lightskyblue;
-    height: 200px;
+    height: 300px;
+    width: auto;
+    background-image: url('./imagens/header-imagem.jpeg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: bottom;
 }
 
-h1{
-    margin: 0;
-    text-align: center;
-    padding-top: 75px;
+*:focus {
+    outline: 0;
 }
 
-.conteudo{
+select, button{
+    cursor: pointer;
+}
+
+/*#################################################################*/
+
+.main{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,20 +36,95 @@ h1{
 
 #lado-esquerdo{
     width: 50%;
+    height: 415px;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     align-items: center;
 }
 
+.container{
+    width: 80%;
+    margin: 2px 0;
+}
+
+#nome, #raca, #subRaca, #fonte{
+    border: none;
+    border-bottom: 1px solid lightgray;
+    margin-bottom: 3px;
+    width: 100%;
+}
+
+#raca{
+    width: 69%;
+    margin-right: 20px;
+}
+
+#raca, #subRaca, #fonte{
+    background-color: #fffef5;
+}
+
+#nome::placeholder{
+    text-align: left;
+    font-weight: 700;
+}
+
+#pesquisarSubRaca, #enviar, #limpar{
+    border: none;
+    background-color: #91a8d1;
+    border-radius: 12px;
+    padding: 5px 10px;
+    color: #fff;
+    font-weight: 700;
+    box-shadow: 0 6px 12px -9px black;
+}
+
+#enviar{
+    width: 120px;
+    height: 30px;
+}
+
+#botoesCor{
+    display: flex;
+    justify-content: center;
+}
+
+.container:nth-child(6){
+    display: flex;
+    justify-content: space-around;
+}
+
+#limpar{
+    background-color: lightgray;
+    color: lightslategrey;
+    transition: background-color 0.5s;
+    width: 120px;
+    height: 30px;
+}
+
+#limpar:hover{
+    background-color: #fff;
+    border: 1px solid #91a8d1;
+}
+
+#paragrafoCor{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/*#################################################################*/
+
 #lado-direito{
     width: 50%;
-    background-color: red;
+    height: 415px;
 }
 
 #imagem{
-    display: block;
-    background-image: url("https://http2.mlstatic.com/shitzu-mini-macho-muito-lindo-filhote-shihtzu-shih-tzu-D_NQ_NP_913617-MLB41483501818_042020-F.jpg");
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-position: center;
+    background-repeat: no-repeat;
     border-radius: 20px;
     height: 350px;
     width: 70%;   
@@ -45,10 +134,34 @@ h1{
 }
 
 #nomeCachorro{
+    margin-top: 200px;
+    font-weight: 700;
+    font-size: 50px;
+}
+
+#caixaMensagem{
+    height: 20px;
+    width: 100%;
+}
+
+#mensagem{
+    display: none;
     text-align: center;
 }
 
+/*#################################################################*/
+
 footer{
-    background-color: lightcoral;
+    background-color: #5b7dba;
     height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#copyright{
+    text-align: center;
+    font-weight: 700;
+    color: #fbd584;
+    font-size: 20px;
 }
