@@ -1,10 +1,13 @@
 let selectRaca = document.getElementById("raca");
 let selectSubRaca = document.getElementById("subRaca");
 let pesquisarSubRaca = document.getElementById("pesquisarSubRaca");
-let nomeCachorro = document.querySelector("#nomeCachorro");
+let nomeCachorro = document.getElementById("nomeCachorro");
+let botaoEnviar = document.getElementById("enviar");
+let divImagem = document.getElementById("imagem");
+let mensagem = document.getElementById("mensagem");
 
 fetch("https://dog.ceo/api/breeds/list/all")
-    .then((response) => { return response.json() })
+    .then(response => response.json())
     .then((data) => {
         console.log(data);
         let dataRacas = data.message;
@@ -29,7 +32,7 @@ pesquisarSubRaca.onclick = () => {
 
 
     fetch(`https://dog.ceo/api/breed/${racaselecionada}/list`)
-        .then((response) => { return response.json() })
+        .then(response => response.json() )
         .then((data) => {
             console.log(data.message);
             let dataSubRacas = data.message;
@@ -55,6 +58,38 @@ pesquisarSubRaca.onclick = () => {
             console.warn(error);
         }))
 }
+
+botaoEnviar.onclick = ()=>{
+    let racaIndex = document.getElementById("raca").selectedIndex;
+    let racaOpcao = document.getElementById("raca").options;
+
+    let subRacaIndex = document.getElementById("subRaca").selectedIndex;
+    let subRacaOpcao = document.getElementById("subRaca").options;
+
+    let racaselecionada = racaOpcao[racaIndex].text;
+    let subRacaSelecionada = subRacaOpcao[subRacaIndex].text;
+
+    let foto = "";
+
+    //console.log(racaOpcao[racaIndex].text);
+    //console.log(subRacaOpcao[subRacaIndex].text);
+
+    fetch(`https://dog.ceo/api/breed/${racaselecionada}/${subRacaSelecionada}/images/random`)
+    //fetch(`https://dog.ceo/api/breed/hound/afghan/images/random`)
+    .then(response=>response.json())
+    .then(data=>{
+        foto = data.message;
+        console.log(foto);
+        divImagem.style.backgroundImage =`url('${foto}')`
+        mensagem.style.display = "block";
+        setTimeout(() => {
+            mensagem.style.display = "none";
+        }, 1500);
+        
+    })
+    .catch(error=>console.warn(error))
+}
+
 function pegacor() {
     let selecionado = document.querySelector("input[name=cor]:checked")
     nomeCachorro.style=(`color: ${selecionado.id}`)
