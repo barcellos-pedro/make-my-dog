@@ -8,12 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/barcellos-pedro/teste-enext.git"
+    "url": "git+https://github.com/barcellos-pedro/make-my-dog.git"
   },
-  "author": "",
+  "author": "Pedro Barcellos",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/barcellos-pedro/teste-enext/issues"
+    "url": "https://github.com/barcellos-pedro/make-my-dog/issues"
   },
-  "homepage": "https://github.com/barcellos-pedro/teste-enext#readme"
+  "homepage": "https://github.com/barcellos-pedro/make-my-dog#readme"
 }
