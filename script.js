@@ -1,6 +1,7 @@
 let selectRaca = document.getElementById("raca");
 let selectSubRaca = document.getElementById("subRaca");
 let pesquisarSubRaca = document.getElementById("pesquisarSubRaca");
+let inputNome = document.getElementById("nome");
 let nomeCachorro = document.getElementById("nomeCachorro");
 let botaoEnviar = document.getElementById("enviar");
 let divImagem = document.getElementById("imagem");
@@ -25,6 +26,7 @@ fetch("https://dog.ceo/api/breeds/list/all")
     }))
 
 pesquisarSubRaca.onclick = () => {
+
     let x = document.getElementById("raca").selectedIndex;
     let y = document.getElementById("raca").options;
     console.log(y[x].text);
@@ -54,12 +56,13 @@ pesquisarSubRaca.onclick = () => {
             }
 
         })
-        .catch((error => {
+        .catch((error) => {
             console.warn(error);
-        }))
+        })
 }
 
 botaoEnviar.onclick = ()=>{
+
     let racaIndex = document.getElementById("raca").selectedIndex;
     let racaOpcao = document.getElementById("raca").options;
 
@@ -71,23 +74,35 @@ botaoEnviar.onclick = ()=>{
 
     let foto = "";
 
-    //console.log(racaOpcao[racaIndex].text);
-    //console.log(subRacaOpcao[subRacaIndex].text);
+    console.log(racaOpcao[racaIndex].text);
+    console.log(subRacaOpcao[subRacaIndex].text);
 
-    fetch(`https://dog.ceo/api/breed/${racaselecionada}/${subRacaSelecionada}/images/random`)
-    //fetch(`https://dog.ceo/api/breed/hound/afghan/images/random`)
-    .then(response=>response.json())
-    .then(data=>{
-        foto = data.message;
-        console.log(foto);
-        divImagem.style.backgroundImage =`url('${foto}')`
-        mensagem.style.display = "block";
-        setTimeout(() => {
-            mensagem.style.display = "none";
-        }, 1500);
-        
-    })
-    .catch(error=>console.warn(error))
+    if(subRacaSelecionada == 'Sub-Raça inexistente'){
+        fetch(`https://dog.ceo/api/breed/${racaselecionada}/images/random`)
+        .then(response => response.json())
+        .then((data)=>{
+            foto = data.message;
+            divImagem.style.backgroundImage =`url('${foto}')`;
+            setTimeout(()=> { nomeCachorro.textContent = inputNome.value; },700);
+            mensagem.style.display = "block";
+            setTimeout(() => { mensagem.style.display = "none"; }, 1500);
+        })
+        .catch(error => console.warn(error))
+    }
+    
+    else{
+        fetch(`https://dog.ceo/api/breed/${racaselecionada}/${subRacaSelecionada}/images/random`) // Imagem por raça e sub-raça
+        .then(response => response.json())
+        .then((data)=>{
+            foto = data.message;
+            divImagem.style.backgroundImage =`url('${foto}')`;
+            setTimeout(()=> { nomeCachorro.textContent = inputNome.value; },700);
+            mensagem.style.display = "block";
+            setTimeout(() => { mensagem.style.display = "none"; }, 1500);
+        })
+        .catch(error=>console.warn(error))
+    }
+
 }
 
 function pegacor() {
