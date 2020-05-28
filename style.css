@@ -28,6 +28,7 @@ select, button{
 /*#################################################################*/
 
 .main{
+    margin-top: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -141,12 +142,16 @@ select, button{
 
 #caixaMensagem{
     height: 20px;
-    width: 100%;
+    width: 30%;
+    margin-bottom: 20px;
 }
 
 #mensagem{
     display: none;
     text-align: center;
+    color: #f9bc3a;
+    font-weight: 700;
+    font-size: 25px;
 }
 
 /*#################################################################*/
