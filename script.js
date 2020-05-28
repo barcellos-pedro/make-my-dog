@@ -11,6 +11,8 @@ let mensagem = document.getElementById("mensagem");
 
 let preferenciasUsuario = JSON.parse(localStorage.getItem('atributos_dog')) || [];
 
+carregarPreferencias();
+
 fetch("https://dog.ceo/api/breeds/list/all")
     .then(response => response.json())
     .then((data) => {
@@ -161,3 +163,10 @@ function limparCampos(){
     divImagem.style.backgroundImage = "url('')";
 }
 
+function carregarPreferencias(){    
+    let dog = preferenciasUsuario.pop();
+    inputNome.value = dog.nome;
+    selectRaca.innerHTML = `<option>${dog.raca}</option>`;
+    selectSubRaca.innerHTML = `<option>${dog.subRaca}</option>`;
+    selectFonte.value = dog.fonte;
+}
