@@ -1,0 +1,19 @@
+{
+  "name": "make-my-dog",
+  "version": "1.0.0",
+  "description": "Buscar em uma API pública todas as raças de cachorros.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/barcellos-pedro/teste-enext.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/barcellos-pedro/teste-enext/issues"
+  },
+  "homepage": "https://github.com/barcellos-pedro/teste-enext#readme"
+}
