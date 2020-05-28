@@ -8,73 +8,75 @@
     <title>Make my dog</title>
 </head>
 <body>
-    <header>
-        <h1>Make my dog</h1>
-    </header>
+    <header></header>
 
     <div class="main">
 
         <div id="lado-esquerdo">
-            <div>
-                <label for="nome">Insira o nome do seu cão.</label>
-                <input type="text" id="nome" placeholder="Digite aqui">
+            <div class="container">
+                <input type="text" id="nome" placeholder="Nome do seu dog">
             </div>
 
-            <div>
-                <label for="raca">Selecione a raça</label>
+            <div class="container">
                 <select name="raca" id="raca">
-                    <!-- <option value="raca1">Raça 1</option>  -->
+                    <option value="">Selecione a raça</option>
                 </select>
-                <button id="pesquisarSubRaca">pesquisar sub-raça</button>
+                <button id="pesquisarSubRaca">Pesquisar sub-raça</button>
             </div>
 
-            <div>
+            <div class="container">
                 <select name="sub-raca" id="subRaca">
                     <option value="">Sub-Raça</option>
                 </select>
             </div>
 
-            <div>
-                <label for="fonte">Escolha a fonte para o texto</label>
+            <div class="container">
                 <select name="fonte" id="fonte">
-                    <!-- <option value="fonte 1">Fonte 1</option>  -->
+                    <option value="">Escolha a fonte para o texto</option>  
                 </select>
             </div>
 
-            <div id="cores">
+            <div  class="container">
                 <p id="paragrafoCor">Escolha a cor do seu texto</p>
 
                 <div id="botoesCor">
-                    <label for="">Vermelho</label>
+                    <label for="red">Vermelho</label>
                     <input type="radio" name="cor" value="red" id="red" onclick="pegacor()">
-                    <label for="">Verde</label>
+
+                    <label for="green">Verde</label>
                     <input type="radio" name="cor" value="green" id="green" onclick="pegacor()">
-                    <label for="">Amarelo</label>
+
+                    <label for="yellow">Amarelo</label>
                     <input type="radio" name="cor" value="yellow" id="yellow" onclick="pegacor()">
-                    <label for="">Roxo</label>
+
+                    <label for="rebeccapurple">Roxo</label>
                     <input type="radio" name="cor" value="rebeccapurple" id="rebeccapurple"onclick="pegacor()">
-                    <label for="">Azul</label>
+
+                    <label for="blue">Azul</label>
                     <input type="radio" name="cor" value="blue" id="blue" onclick="pegacor()">
                 </div>
             </div>
 
-            <div>
+            <div class="container">
                 <button id="enviar">Vem doguinho</button>
-                <button>Limpar</button>
+                <button id="limpar">Limpar</button>
             </div>
 
-            <p id="mensagem">Mensagem de sucesso!</p>
+            <div id="caixaMensagem">
+                <p id="mensagem">Seu Dog foi salvo!</p>
+            </div>
         </div>
 
         <div id="lado-direito">
-            <div id="imagem"></div>
-            <p id="nomeCachorro">Freud Barcellos</p>
+            <div id="imagem">
+                <p id="nomeCachorro"></p>
+            </div>
         </div>
         
     </div>
 
     <footer>
-
+        <p id="copyright">&copy; 2020 makemydog.com.br<p></p>
     </footer>
 </body>
 </html>
