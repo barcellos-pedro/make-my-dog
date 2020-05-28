@@ -72,6 +72,11 @@ botaoEnviar.onclick = ()=>{
     let racaselecionada = racaOpcao[racaIndex].text;
     let subRacaSelecionada = subRacaOpcao[subRacaIndex].text;
 
+    let fonteIndex = document.getElementById("fonte").selectedIndex;
+    let fonteOpcao = document.getElementById("fonte").options;
+
+    let fonteSelecionada = fonteOpcao[fonteIndex].text;
+
     let foto = "";
 
     console.log(racaOpcao[racaIndex].text);
@@ -83,6 +88,7 @@ botaoEnviar.onclick = ()=>{
         .then((data)=>{
             foto = data.message;
             divImagem.style.backgroundImage =`url('${foto}')`;
+            pegaFonte(fonteSelecionada);
             setTimeout(()=> { nomeCachorro.textContent = inputNome.value; },700);
             mensagem.style.display = "block";
             setTimeout(() => { mensagem.style.display = "none"; }, 1500);
@@ -96,6 +102,7 @@ botaoEnviar.onclick = ()=>{
         .then((data)=>{
             foto = data.message;
             divImagem.style.backgroundImage =`url('${foto}')`;
+            pegaFonte(fonteSelecionada);
             setTimeout(()=> { nomeCachorro.textContent = inputNome.value; },700);
             mensagem.style.display = "block";
             setTimeout(() => { mensagem.style.display = "none"; }, 1500);
@@ -105,7 +112,12 @@ botaoEnviar.onclick = ()=>{
 
 }
 
-function pegacor() {
-    let selecionado = document.querySelector("input[name=cor]:checked")
-    nomeCachorro.style=(`color: ${selecionado.id}`)
+function pegaCor() {
+    let corSelecionada = document.querySelector("input[name=cor]:checked")
+    nomeCachorro.style=(`color: ${corSelecionada.id}`)
+}
+
+function pegaFonte(fonte){
+    nomeCachorro.style.fontFamily = `${fonte}`;
+    console.log(fonte);
 }

@@ -3,6 +3,10 @@ body{
     background-color: #fffef5;
 }
 
+input, select, option, button, p, label{
+    font-family: 'Roboto', sans-serif;
+}
+
 p{
     margin: 0;
 }
@@ -63,11 +67,12 @@ select, button{
 
 #raca, #subRaca, #fonte{
     background-color: #fffef5;
+    color: #707074;
 }
 
 #nome::placeholder{
+    color: #707074;
     text-align: left;
-    font-weight: 700;
 }
 
 #pesquisarSubRaca, #enviar, #limpar{
@@ -83,6 +88,13 @@ select, button{
 #enviar{
     width: 120px;
     height: 30px;
+    transition: background-color 0.5s;
+}
+
+#enviar:hover{
+    background-color: #fff;
+    border: 1px solid #91a8d1;
+    color: #91a8d1;
 }
 
 #botoesCor{
