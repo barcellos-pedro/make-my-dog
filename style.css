@@ -5,6 +5,7 @@ body{
 
 input, select, option, button, p, label{
     font-family: 'Roboto', sans-serif;
+    font-size: 15px;
 }
 
 p{
@@ -61,7 +62,7 @@ select, button{
 }
 
 #raca{
-    width: 69%;
+    width: 68%;
     margin-right: 20px;
 }
 
@@ -85,6 +86,10 @@ select, button{
     box-shadow: 0 6px 12px -9px black;
 }
 
+input[name="cor"]{
+    margin-right: 25px;
+}
+
 #enviar{
     width: 120px;
     height: 30px;
@@ -105,19 +110,6 @@ select, button{
 .container:nth-child(6){
     display: flex;
     justify-content: space-around;
-}
-
-#limpar{
-    background-color: lightgray;
-    color: lightslategrey;
-    transition: background-color 0.5s;
-    width: 120px;
-    height: 30px;
-}
-
-#limpar:hover{
-    background-color: #fff;
-    border: 1px solid #91a8d1;
 }
 
 #paragrafoCor{
@@ -161,9 +153,8 @@ select, button{
 #mensagem{
     display: none;
     text-align: center;
-    color: #f9bc3a;
-    font-weight: 700;
-    font-size: 25px;
+    color: #F95D3A;
+    font-size: 15px;
 }
 
 /*#################################################################*/
