@@ -11,24 +11,8 @@ let mensagem = document.getElementById("mensagem");
 
 let preferenciasUsuario = JSON.parse(localStorage.getItem('atributos_dog')) || [];
 
+listarRacas();
 carregarPreferencias();
-
-fetch("https://dog.ceo/api/breeds/list/all")
-    .then(response => response.json())
-    .then((data) => {
-        let dataRacas = data.message;
-        Object.keys(dataRacas).forEach((raca) => {
-            let optionValue = document.createElement("option");
-            optionValue.setAttribute("value", raca);
-            optionValue.textContent = raca;
-            selectRaca.appendChild(optionValue);
-            return optionValue
-        })
-    })
-    .catch((error => {
-        console.warn(error);
-    }))
-
 
 pesquisarSubRaca.onclick = () => {
 
@@ -114,6 +98,24 @@ botaoEnviar.onclick = () => {
 
 }
 
+function listarRacas(){
+    fetch("https://dog.ceo/api/breeds/list/all")
+    .then(response => response.json())
+    .then((data) => {
+        let dataRacas = data.message;
+        Object.keys(dataRacas).forEach((raca) => {
+            let optionValue = document.createElement("option");
+            optionValue.setAttribute("value", raca);
+            optionValue.textContent = raca;
+            selectRaca.appendChild(optionValue);
+            return optionValue
+        })
+    })
+    .catch((error => {
+        console.warn(error);
+    }))
+}
+
 function pegaCor(){
     let corSelecionada = document.querySelector("input[name=cor]:checked")
     nomeCachorro.style = (`color: ${corSelecionada.id}`)
@@ -151,22 +153,14 @@ function salvarPreferencias(){
     localStorage.setItem("atributos_dog", JSON.stringify(preferenciasUsuario));
 }
 
-function limparCampos(){
-    let radioSelecionado = document.querySelector('input[name="cor"]:checked').value;
-
-    inputNome.value = '';
-    selectRaca.value = '';
-    selectSubRaca.options.length = 0;
-    selectFonte.value = '';
-    radioSelecionado = '';
-    nomeCachorro.textContent = "";
-    divImagem.style.backgroundImage = "url('')";
-}
-
-function carregarPreferencias(){    
-    let dog = preferenciasUsuario.pop();
-    inputNome.value = dog.nome;
-    selectRaca.innerHTML = `<option>${dog.raca}</option>`;
-    selectSubRaca.innerHTML = `<option>${dog.subRaca}</option>`;
-    selectFonte.value = dog.fonte;
+function carregarPreferencias(){
+    if(typeof preferenciasUsuario != "undefined" && preferenciasUsuario != null && preferenciasUsuario.length != null && preferenciasUsuario.length > 0){
+        let dog = preferenciasUsuario.pop();
+        inputNome.value = dog.nome;
+        selectRaca.innerHTML = `<option>${dog.raca}</option>`;
+        selectSubRaca.innerHTML = `<option>${dog.subRaca}</option>`;
+        selectFonte.value = dog.fonte;
+    }else{
+        listarRacas();
+    }
 }
