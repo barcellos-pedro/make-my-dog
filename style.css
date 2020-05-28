@@ -79,6 +79,7 @@ select, button{
 #pesquisarSubRaca, #enviar{
     border: none;
     background-color: #91a8d1;
+    border: 1px solid #91a8d1;
     border-radius: 12px;
     padding: 5px 10px;
     color: #fff;
