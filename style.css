@@ -76,7 +76,7 @@ select, button{
     text-align: left;
 }
 
-#pesquisarSubRaca, #enviar, #limpar{
+#pesquisarSubRaca, #enviar{
     border: none;
     background-color: #91a8d1;
     border-radius: 12px;
@@ -84,6 +84,13 @@ select, button{
     color: #fff;
     font-weight: 700;
     box-shadow: 0 6px 12px -9px black;
+    transition: background-color 0.5s;
+}
+
+#pesquisarSubRaca:hover{
+    background-color: #fff;
+    border: 1px solid #91a8d1;
+    color: #91a8d1;
 }
 
 input[name="cor"]{
@@ -93,7 +100,6 @@ input[name="cor"]{
 #enviar{
     width: 120px;
     height: 30px;
-    transition: background-color 0.5s;
 }
 
 #enviar:hover{
